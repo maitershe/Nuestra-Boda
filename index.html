@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación a la Boda</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Invitación de Boda</h1>
+        <p>Nos encantaría que nos acompañaras en este día especial</p>
+    </header>
+
+    <div class="container">
+        <section class="details">
+            <h2>Detalles del Evento</h2>
+            <p><strong>Fecha:</strong> 15 de Octubre, 2024</p>
+            <p><strong>Hora:</strong> 16:00</p>
+            <p><strong>Lugar de la Ceremonia:</strong> Iglesia de San Pedro</p>
+            <p><strong>Lugar de la Recepción:</strong> Hacienda El Encanto</p>
+        </section>
+
+        <section class="gallery">
+            <h2>Galería de Fotos</h2>
+            <div class="carousel">
+                <div class="carousel-wrapper">
+                    <img src="foto1.jpg" alt="Foto 1">
+                    <img src="foto2.jpg" alt="Foto 2">
+                    <img src="foto3.jpg" alt="Foto 3">
+                </div>
+                <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+                <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+            </div>
+        </section>
+
+        <section class="map">
+            <h2>Cómo Llegar</h2>
+            <div id="map"></div>
+        </section>
+    </div>
+
+    <footer>
+        <p>¡Estamos emocionados por compartir este momento contigo!</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-wrapper img');
+
+        function showSlide(index) {
+            const totalSlides = slides.length;
+            currentSlide = (index + totalSlides) % totalSlides;
+            slides.forEach((slide, i) => {
+                slide.style.transform = `translateX(${-currentSlide * 100}%)`;
+            });
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(currentSlide);
+
+            // Inicializar el mapa
+            const mapOptions = {
+                center: { lat: 40.7128, lng: -74.0060 }, // Coordenadas del lugar del evento
+                zoom: 15,
+                disableDefaultUI: true,
+                styles: [
+                    { featureType: 'all', stylers: [{ saturation: -100 }] },
+                    { featureType: 'road', elementType: 'geometry', stylers: [{ color: '#ffffff' }] }
+                ]
+            };
+            new google.maps.Map(document.getElementById('map'), mapOptions);
+        });
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+</body>
+</html>
