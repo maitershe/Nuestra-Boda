@@ -18,15 +18,15 @@ header {
     padding: 2em 1em;
     border-bottom: 5px solid #e2e2e2;
 }
+
 .texto-destacado {
     color: #5c5b5b; /* Puedes ajustar el color del texto */
     font-weight: bold; /* Hace el texto más grueso */
-    background-color: rgba(255, 255, 255, 0.6); /* Fondo blanco con 80% de opacidad */
+    background-color: rgba(255, 255, 255, 0.6); /* Fondo blanco con 60% de opacidad */
     display: inline-block; /* Para que el fondo se ajuste al texto */
     padding: 0.2em 0.5em; /* Espaciado alrededor del texto */
     border-radius: 5px; /* Bordes redondeados opcional */
 }
-
 
 header h1 {
     margin: 0;
@@ -101,7 +101,15 @@ header p {
 }
 
 .map {
-    height: 400px;
+    height: 400px; /* Establece la altura del contenedor del mapa */
+    border-radius: 10px; /* Bordes redondeados para el mapa */
+    overflow: hidden; /* Evita que elementos del mapa se desborden */
+    box-shadow: 0 0 15px rgba(0,0,0,0.1); /* Añade sombra al contenedor del mapa */
+}
+
+#map {
+    width: 100%; /* Asegura que el mapa ocupe todo el ancho del contenedor */
+    height: 100%; /* Asegura que el mapa ocupe toda la altura del contenedor */
 }
 
 footer {
