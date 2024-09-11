@@ -10,12 +10,23 @@ body {
 }
 
 header {
-    background: #b8d9e2;
+    background-image: url('img/imagen1.jpg'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el header */
+    background-position: center; /* Centra la imagen en el header */
     color: #fff;
     text-align: center;
     padding: 2em 1em;
-    border-bottom: 5px solid #030303;
+    border-bottom: 5px solid #e2e2e2;
 }
+.texto-destacado {
+    color: #5c5b5b; /* Puedes ajustar el color del texto */
+    font-weight: bold; /* Hace el texto más grueso */
+    background-color: rgba(255, 255, 255, 0.6); /* Fondo blanco con 80% de opacidad */
+    display: inline-block; /* Para que el fondo se ajuste al texto */
+    padding: 0.2em 0.5em; /* Espaciado alrededor del texto */
+    border-radius: 5px; /* Bordes redondeados opcional */
+}
+
 
 header h1 {
     margin: 0;
@@ -42,9 +53,10 @@ header p {
 }
 
 .details h2, .gallery h2, .map h2 {
-    color: #b8d9e2;
-    border-bottom: 2px solid #030303;
-    padding-bottom: 0.5em;
+    color: #3d3d3d;
+    border-bottom: 2px solid #5c5b5b;
+    text-align: center;
+    padding-bottom: .5em;
     margin-bottom: 1em;
 }
 
@@ -93,9 +105,9 @@ header p {
 }
 
 footer {
-    background: #b8d9e2;
+    background: #b7cbff;
     color: #fff;
     text-align: center;
     padding: 1em;
-    border-top: 5px solid #030303;
+    border-top: 5px solid #e2e2e2;
 }
